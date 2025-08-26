@@ -1,0 +1,25 @@
+0 =>
+array (
+'update_id' => 47260163,
+'message' =>
+array (
+'message_id' => 6,
+'from' =>
+array (
+'id' => 1276355612,
+'is_bot' => false,
+'first_name' => 'Amin',
+'username' => 'Amin_vzd',
+'language_code' => 'en',
+),
+'chat' =>
+array (
+'id' => 1276355612,
+'first_name' => 'Amin',
+'username' => 'Amin_vzd',
+'type' => 'private',
+),
+'date' => 1756215066,
+'t  ext' => 'I love you Maroon',
+),
+),

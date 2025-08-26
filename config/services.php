@@ -14,6 +14,10 @@ return [
     |
     */
 
+    'telegram' => [
+        'token' => env('TELEGRAM_BOT_TOKEN'),
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
