@@ -34,7 +34,15 @@ class TelegramLongPollingCommand extends Command
         $offset = 0;
 
         $this->info("Starting Telegram long polling...");
-
+        $buttons = [
+            [
+                'text'=>'ChatGpt',
+                'callback_data'  =>'chatgpt'
+            ], [
+                'text'=>'Torob',
+                'callback_data'  =>'torob'
+            ],
+           ];
         while (true) {
             $updates = $this->telegram->getUpdates($offset);
             if(isset($updates['result'])){
@@ -43,7 +51,7 @@ class TelegramLongPollingCommand extends Command
                         if(isset($update['message'])){
                             $chat_id = $update['message']['chat']['id'];
                             $text = $update['message']['text'];
-                            $this->telegram->sendMessage($chat_id, $text);
+                            $this->telegram->sendMessage($chat_id, $text,$buttons);
                         }
                 }
                 }
