@@ -22,7 +22,7 @@ class TelegramService
         return $response->json();
     }
 
-    public function sendMessage($chat_id, $text,array $buttons = [])
+    public function sendMessage($chat_id, $text,array $buttons = [] )
     {
 
         $url = 'https://api.telegram.org/bot' . $this->token . '/sendMessage';
@@ -41,10 +41,13 @@ class TelegramService
             return null;
         }
         $keyboard = [];
+        if (isset($buttons[0]['text'])) {
+            $buttons = [$buttons];
+        }
         foreach ($buttons as $row) {
             $rowButtons =[];
             foreach ($row as $button) {
-               $rowButtons [] = [
+                   $rowButtons [] = [
                     'text' => $button['text'],
                     'callback_data' => $button['callback_data']
                 ];

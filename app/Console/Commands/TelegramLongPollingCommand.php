@@ -20,11 +20,14 @@ class TelegramLongPollingCommand extends Command
      * @var string
      */
     protected $description = 'Start the long polling for the telegram bot';
-    protected  $telegram;
-    public function __construct(TelegramService $telegram) {
+    protected $telegram;
+
+    public function __construct(TelegramService $telegram)
+    {
         Parent::__construct();
         $this->telegram = $telegram;
     }
+
     /**
      * Execute the console command.
      */
@@ -35,26 +38,23 @@ class TelegramLongPollingCommand extends Command
 
         $this->info("Starting Telegram long polling...");
         $buttons = [
-            [
-                'text'=>'ChatGpt',
-                'callback_data'  =>'chatgpt'
-            ], [
-                'text'=>'Torob',
-                'callback_data'  =>'torob'
-            ],
-           ];
+                ['text' => "Start", 'callback_data' => "start"],
+                ['text' => "Stop", 'callback_data' => "stop"],
+
+        ];
+        info(gettype($buttons));
         while (true) {
             $updates = $this->telegram->getUpdates($offset);
-            if(isset($updates['result'])){
+            if (isset($updates['result'])) {
                 foreach ($updates['result'] as $update) {
-                        $offset =  $update['update_id'] + 1;
-                        if(isset($update['message'])){
-                            $chat_id = $update['message']['chat']['id'];
-                            $text = $update['message']['text'];
-                            $this->telegram->sendMessage($chat_id, $text,$buttons);
-                        }
+                    $offset = $update['update_id'] + 1;
+                    if (isset($update['message'])) {
+                        $chat_id = $update['message']['chat']['id'];
+                        $text = $update['message']['text'];
+                        $this->telegram->sendMessage($chat_id, $text, $buttons);
+                    }
                 }
-                }
+            }
             sleep(1);
         }
     }
