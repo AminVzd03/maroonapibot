@@ -22,39 +22,34 @@ class TelegramService
         return $response->json();
     }
 
-    public function sendMessage($chat_id, $text,array $buttons = [] )
+    public function sendMessage($chat_id,$view, array $data = [], array $buttons = [])
     {
-
+        $text = view($view, $data)->render();
         $url = 'https://api.telegram.org/bot' . $this->token . '/sendMessage';
-        $payload = Http::post($url, [
+        $payload = [
             'chat_id' => $chat_id,
             'text' => $text,
-        ]);
+            'parse_mode' => 'HTML',
+        ];
         $keyboard = $this->buildInlineKeyboard($buttons);
-        if($keyboard) {
+        if ($keyboard) {
             $payload['reply_markup'] = json_encode($keyboard);
         }
-        //return $response->json();
+        Http::post($url, $payload);
     }
-    private function buildInlineKeyboard( array $buttons) : ?array {
+
+    private function buildInlineKeyboard(array $buttons): ?array
+    {
         if (empty($buttons)) {
             return null;
         }
         $keyboard = [];
-        if (isset($buttons[0]['text'])) {
-            $buttons = [$buttons];
+        foreach ($buttons as $button) {
+            $keyboard[] = [
+                'text' => $button['text'],
+                'callback_data' => $button['callback_data'],
+            ];
         }
-        foreach ($buttons as $row) {
-            $rowButtons =[];
-            foreach ($row as $button) {
-                   $rowButtons [] = [
-                    'text' => $button['text'],
-                    'callback_data' => $button['callback_data']
-                ];
-            }
-            $keyboard [] = $rowButtons;
-
-        }
-        return ['inline_keyboard' => $keyboard];
+        return ['inline_keyboard' => [$keyboard]];
     }
 }

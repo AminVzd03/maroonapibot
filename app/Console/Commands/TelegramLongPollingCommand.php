@@ -42,7 +42,6 @@ class TelegramLongPollingCommand extends Command
                 ['text' => "Stop", 'callback_data' => "stop"],
 
         ];
-        info(gettype($buttons));
         while (true) {
             $updates = $this->telegram->getUpdates($offset);
             if (isset($updates['result'])) {
@@ -51,7 +50,7 @@ class TelegramLongPollingCommand extends Command
                     if (isset($update['message'])) {
                         $chat_id = $update['message']['chat']['id'];
                         $text = $update['message']['text'];
-                        $this->telegram->sendMessage($chat_id, $text, $buttons);
+                        $this->telegram->sendMessage( $chat_id, view: 'chooseSource',data:$update['message'] , buttons:  $buttons);
                     }
                 }
             }
