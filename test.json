@@ -1,9 +1,31 @@
+09:01:35] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:01:40] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:01:42] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:01:46] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
 0 =>
 array (
-'update_id' => 47260163,
+'update_id' => 47260196,
 'message' =>
 array (
-'message_id' => 6,
+'message_id' => 70,
 'from' =>
 array (
 'id' => 1276355612,
@@ -19,7 +41,171 @@ array (
 'username' => 'Amin_vzd',
 'type' => 'private',
 ),
-'date' => 1756215066,
-'t  ext' => 'I love you Maroon',
+'date' => 1758445306,
+'text' => 'Fruit',
 ),
 ),
+),
+)
+[2025-09-21 09:01:49] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:01:54] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:01:56] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:00] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:02] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:07] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:09] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:13] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:15] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:20] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:22] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:26] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:28] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:33] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:35] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:40] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:42] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:46] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:48] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:53] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:55] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:02:59] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:03:01] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:03:06] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:03:08] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:03:13] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)
+[2025-09-21 09:03:15] local.INFO: array (
+'ok' => true,
+'result' =>
+array (
+),
+)

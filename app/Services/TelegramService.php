@@ -22,9 +22,11 @@ class TelegramService
         return $response->json();
     }
 
-    public function sendMessage($chat_id,$view, array $data = [], array $buttons = [])
+    public function sendMessage($chat_id,$view, string $data , array $buttons = [])
     {
-        $text = view($view, $data)->render();
+        $text =  view($view, compact('data'))->render();
+        info($text);
+
         $url = 'https://api.telegram.org/bot' . $this->token . '/sendMessage';
         $payload = [
             'chat_id' => $chat_id,

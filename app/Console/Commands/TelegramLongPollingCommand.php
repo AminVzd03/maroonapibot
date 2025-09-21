@@ -50,7 +50,7 @@ class TelegramLongPollingCommand extends Command
                     if (isset($update['message'])) {
                         $chat_id = $update['message']['chat']['id'];
                         $text = $update['message']['text'];
-                        $this->telegram->sendMessage( $chat_id, view: 'chooseSource',data:$update['message'] , buttons:  $buttons);
+                        $this->telegram->sendMessage( $chat_id, view: 'chooseSource', data: $text ,buttons:  $buttons);
                     }
                 }
             }
