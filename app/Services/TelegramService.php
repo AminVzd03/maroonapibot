@@ -22,7 +22,7 @@ class TelegramService
         return $response->json();
     }
 
-    public function sendMessage($chat_id,$view, string $data , array $buttons = [])
+    public function sendMessage($chat_id,$view, string $data = null, array $buttons = [])
     {
         $text =  view($view, compact('data'))->render();
         info($text);

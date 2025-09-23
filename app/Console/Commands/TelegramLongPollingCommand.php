@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\ConversationService;
 use App\Services\TelegramService;
 use Illuminate\Console\Command;
 
@@ -20,12 +21,13 @@ class TelegramLongPollingCommand extends Command
      * @var string
      */
     protected $description = 'Start the long polling for the telegram bot';
-    protected $telegram;
 
-    public function __construct(TelegramService $telegram)
+    public function __construct(
+        protected TelegramService $telegram,
+        protected ConversationService $convo)
     {
         Parent::__construct();
-        $this->telegram = $telegram;
+
     }
 
     /**
@@ -37,11 +39,11 @@ class TelegramLongPollingCommand extends Command
         $offset = 0;
 
         $this->info("Starting Telegram long polling...");
-        $buttons = [
+   /*     $buttons = [
                 ['text' => "🔎 Search it for me ", 'callback_data' => "search_price"],
                 ['text' => "✅ I know it", 'callback_data' => "know_price"],
 
-        ];
+        ];*/
         while (true) {
             $updates = $this->telegram->getUpdates($offset);
             if (isset($updates['result'])) {
@@ -50,7 +52,9 @@ class TelegramLongPollingCommand extends Command
                     if (isset($update['message'])) {
                         $chat_id = $update['message']['chat']['id'];
                         $text = $update['message']['text'];
-                        $this->telegram->sendMessage( $chat_id, view: 'chooseSource', data: $text ,buttons:  $buttons);
+                        info($text);
+            /*            $this->telegram->sendMessage( $chat_id, view: 'chooseSource', data: $text ,buttons:  $buttons);*/
+                        $this->convo->handleStates($chat_id,$text);
                     }
                 }
             }
