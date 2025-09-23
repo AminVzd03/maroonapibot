@@ -38,8 +38,8 @@ class TelegramLongPollingCommand extends Command
 
         $this->info("Starting Telegram long polling...");
         $buttons = [
-                ['text' => "Start", 'callback_data' => "start"],
-                ['text' => "Stop", 'callback_data' => "stop"],
+                ['text' => "🔎 Search it for me ", 'callback_data' => "search_price"],
+                ['text' => "✅ I know it", 'callback_data' => "know_price"],
 
         ];
         while (true) {

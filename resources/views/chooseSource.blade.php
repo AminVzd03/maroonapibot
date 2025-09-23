@@ -1,3 +1,3 @@
 
-    ⚡ Which source do you want the price of <b>{{ $data }}</b> from?
+    ⚡ Do you want to us to search the price of  <b>{{ $data }}</b> or you know it ?
 
